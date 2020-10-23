@@ -1,0 +1,42 @@
+{% extends "auctions/layout.html" %}
+
+
+
+{% block body %}
+
+
+  <div class="container ">
+
+      <div class="row">
+        <div class="card-deck">
+           {% for listing in listings reversed %}
+
+
+                        <div class="card mb-4" style="min-width: 20rem; max-width: 22rem;">
+                            <img class="card-img-top" src="{% if listing.image_url %} {{ listing.image_url }} {% else %}
+                            https://sjkelectrical.com.my/img/default-image.jpg
+                            {% endif %}" alt="listing  image" class="mx-auto d-block">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{ listing.title }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">by {{ listing.owner }}     </h6>
+                                <p class="card-text"><p>Starting price: ${{ listing.bid }} </p>
+                                <p class="card-text">{{ listing.description }} </p>
+                                <p class="card-text">Current price:</p>
+                                <h6 class="card-subtitle mb-2 text-muted font-weight-bold">${{ listing.current_price }}</h6>
+                                <p class="card-text"><small class="text-muted">Last updated on {{ listing.post_date }}</small></p>
+                                <a href="{% url 'listing_page' listing.pk %}" class="btn btn-primary"> View</a>
+
+                            </div>
+                         </div>
+
+
+                {% empty %}
+                  <br/>
+                  <p>Nothing to see here for now :(</p>
+                {% endfor %}
+    </div>
+
+   </div>
+  </div>
+
+{% endblock %}
