@@ -1,4 +1,5 @@
 # Bidding-Commerce
-Wikipedia-like encyclopedia that consists of a number of encyclopedia
-entries on various topics. Language used- HTML, CSS, Bootstrap, Markdown,
-Python on Django framework.
+eBay-like e-commerce auction site that will allow users to post auction
+listings, place bids on listings, comment on those listings, and add listings to
+a “watchlist.” On Django framework using html, CSS, python and SQL,
+Models and Migration.
